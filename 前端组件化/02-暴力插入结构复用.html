@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>结构复用</title>
+</head>
+
+<body>
+    <div class="wrapper"></div>
+
+    <script>
+        // TODO: 写一个类 具备一定的复用功能 类有render方法 方法直接放回一个HTML结构的字符串
+        class LikeButton {
+            render () {
+                return  `
+                <button id='like-btn'>
+                    <span class='like-text'>赞</span>
+                    <span>👍</span>
+                </button>
+                `
+            }
+        }
+
+        const wrapper = document.querySelector('.wrapper')
+
+        // 这个类构建不同的点赞功能的实例 把他们插到页面中
+        /**
+         * 这种方式暴力地使用innerHtml,把两个摁扭粗鲁的插入wrapper中
+         */
+        const likeButton1 = new LikeButton()
+        wrapper.innerHTML = likeButton1.render()
+
+        const likeButton2 = new LikeButton()
+        wrapper.innerHTML += likeButton2.render()
+
+    </script>
+</body>
+
+</html>
