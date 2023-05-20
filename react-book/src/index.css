@@ -1,0 +1,14 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    
+}
+
+.wrapper {
+  width: 500px;
+  margin: 10px auto;
+  font-size: 14px;
+  background-color: #fff;
+  border: 1px solid #d1d1d1;
+  padding: 20px;
+}
